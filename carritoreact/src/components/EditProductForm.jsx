@@ -1,3 +1,5 @@
+// src/components/EditProductForm.jsx
+
 import React, { useState } from 'react';
 
 function EditProductForm({ product, onUpdateProduct }) {
@@ -11,33 +13,36 @@ function EditProductForm({ product, onUpdateProduct }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="edit-product-form">
       <h2>Editar Producto</h2>
-      <label>
-        Nombre:
+      <div>
+        <label htmlFor="name">Nombre:</label>
         <input
           type="text"
+          id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-      </label>
-      <label>
-        Precio:
+      </div>
+      <div>
+        <label htmlFor="price">Precio:</label>
         <input
           type="number"
+          id="price"
           value={price}
           onChange={(e) => setPrice(parseFloat(e.target.value))}
         />
-      </label>
-      <label>
-        Imagen URL:
+      </div>
+      <div>
+        <label htmlFor="image">Imagen:</label>
         <input
           type="text"
+          id="image"
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />
-      </label>
-      <button type="submit">Actualizar</button>
+      </div>
+      <button type="submit">Guardar</button>
     </form>
   );
 }

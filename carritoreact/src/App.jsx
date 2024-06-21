@@ -1,7 +1,9 @@
+// src/App.jsx
+
 import React, { useState } from 'react';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
-import EditProductForm from './components/EditProductForm';
+import EditProductForm from './components/EditProductForm'; 
 import './App.css';
 
 function App() {
@@ -9,7 +11,7 @@ function App() {
     { id: 1, name: 'Aqtua', price: 10, image: '/images/aqtua.jpg' },
     { id: 2, name: 'Aloe', price: 20, image: '/images/ALOE.jpg' },
     { id: 3, name: 'Biocros', price: 30, image: '/images/BIOCROS.jpg' },
-    { id: 3, name: 'Powermaker', price: 30, image: '/images/POWERMAKER.jpg' },
+    { id: 4, name: 'Powermaker', price: 30, image: '/images/POWERMAKER.jpg' },
   ]);
 
   const [cartItems, setCartItems] = useState([]);
@@ -40,7 +42,7 @@ function App() {
       <ProductList
         products={products}
         onAddToCart={handleAddToCart}
-        onEditProduct={handleEditProduct}  // Pasar onEditProduct a ProductList
+        onEditProduct={handleEditProduct}
       />
       <Cart cartItems={cartItems} onRemoveFromCart={handleRemoveFromCart} />
       {productToEdit && (

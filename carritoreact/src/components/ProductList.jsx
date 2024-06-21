@@ -1,3 +1,5 @@
+// src/components/ProductList.jsx
+
 import React from 'react';
 import Product from './Product';
 
